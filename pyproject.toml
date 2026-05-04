@@ -50,9 +50,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/kirtisoglu/Travel-Time-Matrix"
-Repository = "https://github.com/kirtisoglu/Travel-Time-Matrix"
-Issues = "https://github.com/kirtisoglu/Travel-Time-Matrix/issues"
+Homepage = "https://github.com/kirtisoglu/FalcomTravel"
+Repository = "https://github.com/kirtisoglu/FalcomTravel"
+Issues = "https://github.com/kirtisoglu/FalcomTravel/issues"
 "FalcomChain" = "https://github.com/kirtisoglu/FalcomChain"
 
 [tool.setuptools.packages.find]
