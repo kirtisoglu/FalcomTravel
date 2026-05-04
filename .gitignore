@@ -1,0 +1,74 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# --- Build / packaging ---
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+wheels/
+pip-wheel-metadata/
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# --- Test / lint / type-check caches ---
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.tox/
+.nox/
+.mypy_cache/
+.ruff_cache/
+.dmypy.json
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+
+# --- IDE / editors ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.cursor/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Project-specific ---
+# Legacy research code that the library was extracted from.
+# Kept on disk locally; not part of the published library.
+travel-time-matrix/
+
+# r5r/falcomtravel outputs — typically large parquet datasets
+ttm_parquet/
+*_ttm_parquet/
+
+# OSM extracts and OSMnx cache — large, regeneratable
+*.osm.pbf
+*.pbf
+cache/
+osmnx_cache/
+
+# Local data / instances — may contain large or sensitive files
+data/
+network-data/
+
+# Secrets / local config
+.env
+.env.*
+!.env.example

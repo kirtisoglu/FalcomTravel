@@ -1,0 +1,68 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "falcomtravel"
+version = "0.1.0"
+description = "Travel-time matrix computation for FalcomChain — multi-backend façade over r5r, OSRM, OSMnx, and graph-Dijkstra"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Alaittin Kırtışoğlu", email = "kirtisoglu@hawk.iit.edu" },
+]
+keywords = ["travel time", "isochrone", "OD matrix", "routing", "facility location", "districting"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: GIS",
+]
+requires-python = ">=3.12"
+dependencies = [
+    "networkx>=3.4,<4",
+    "numpy>=1.26,<3",
+    "pandas>=2.0,<3",
+    "tqdm>=4.60",
+]
+
+[project.optional-dependencies]
+parquet = ["pyarrow>=14"]
+osmnx   = ["osmnx>=2.0", "scipy>=1.10"]
+osrm    = ["httpx>=0.27"]
+geo     = ["geopandas>=0.14,<2", "shapely>=2.0,<3"]
+all     = [
+    "pyarrow>=14",
+    "osmnx>=2.0",
+    "scipy>=1.10",
+    "httpx>=0.27",
+    "geopandas>=0.14,<2",
+    "shapely>=2.0,<3",
+]
+dev = [
+    "pytest>=8",
+    "pyarrow>=14",
+    "osmnx>=2.0",
+    "scipy>=1.10",
+    "httpx>=0.27",
+]
+
+[project.urls]
+Homepage = "https://github.com/kirtisoglu/Travel-Time-Matrix"
+Repository = "https://github.com/kirtisoglu/Travel-Time-Matrix"
+Issues = "https://github.com/kirtisoglu/Travel-Time-Matrix/issues"
+"FalcomChain" = "https://github.com/kirtisoglu/FalcomChain"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["falcomtravel*"]
+
+[tool.setuptools.package-data]
+falcomtravel = ["py.typed", "backends/_r/*.R"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+filterwarnings = ["ignore::UserWarning"]
